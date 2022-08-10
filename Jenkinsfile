@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building.. ${BUILD_USER}"
+                echo "Building.. ${BUILD_ID}"
+                wrap([$class: 'BuildUser']) {
+                    sh 'echo "${BUILD_USER}"'
+                }
             }
         }
         stage('Test') {

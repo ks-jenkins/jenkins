@@ -5,6 +5,7 @@ pipeline {
         stage('Terraform Install'){
             steps {
                 sh 'pwd'
+                sh 'whoami'
                 sh 'terraform --version'
             }
         }

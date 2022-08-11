@@ -8,6 +8,7 @@ pipeline {
                     sh '''
                     echo "${BUILD_USER}"
                     echo "My Name"
+                    terraform -version
                     '''
                 }
             }

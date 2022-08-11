@@ -2,13 +2,18 @@ pipeline {
     agent any
 
     stages {
+        stage('Terraform Install'){
+            steps {
+                sh 'pwd'
+                sh 'terraform --version'
+            }
+        }
         stage('Build') {
             steps {
                 wrap([$class: 'BuildUser']) {
                     sh '''
                     echo "${BUILD_USER}"
                     echo "My Name"
-                    terraform -version
                     '''
                 }
             }

@@ -19,7 +19,12 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Ansible') {
+            steps {
+                sh 'ansible --version'
+            }
+        }
+        stage('Terraform') {
             steps {
                 echo 'Testing..'
             }

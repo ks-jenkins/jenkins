@@ -6,7 +6,6 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'whoami'
-                sh 'terraform --version'
             }
         }
         stage('Build') {
@@ -27,6 +26,7 @@ pipeline {
         stage('Terraform') {
             steps {
                 echo 'Testing..'
+                sh 'terraform --version'
             }
         }
         stage('Deploy') {

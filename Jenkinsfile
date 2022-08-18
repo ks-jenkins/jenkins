@@ -13,6 +13,7 @@ pipeline {
                 wrap([$class: 'BuildUser']) {
                     sh '''
                     echo "${BUILD_USER}"
+                    echo "${BUILD_USER_ID}"
                     echo "My Name"
                     '''
                 }
